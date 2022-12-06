@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "988689625010",
+    "project_id": "murphy-beer",
+    "storage_bucket": "murphy-beer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988689625010:android:179fbaa66f1c9715ce3eab",
+        "android_client_info": {
+          "package_name": "com.example.murphy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988689625010-vflbpia7pcidj549ur0hu3ue4s2mcn9v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.murphy",
+            "certificate_hash": "825609d377f30adb6241bf07300093bc56308201"
+          }
+        },
+        {
+          "client_id": "988689625010-pmq9ra9bqb71i1p4to0t631erblpgr45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcHwLgkQXKoOGdiZHrQHnzQ0s7cFqJ6_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988689625010-pmq9ra9bqb71i1p4to0t631erblpgr45.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "988689625010-kek114k2eemkvc852gomraroi16u8lon.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.murphy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
