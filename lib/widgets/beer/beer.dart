@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:murphy/screens/our_beer/beer_edit.dart';
 import 'package:provider/provider.dart';
 
 import '../../app_state.dart';
@@ -64,8 +65,12 @@ class BeerCard extends StatelessWidget {
                   ? IconButton(
                       icon: const Icon(Icons.edit),
                       onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Edit ${beer.name}')));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BeerEdit(beer: beer),
+                          ),
+                        );
                       },
                     )
                   : null,

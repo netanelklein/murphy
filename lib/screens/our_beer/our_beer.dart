@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../app_state.dart';
 import '../../widgets/beer/beer.dart';
 import '../../models/beer.dart';
+import 'beer_edit.dart';
 
 class OurBeer extends StatefulWidget {
   const OurBeer({super.key, required this.beerList});
@@ -27,8 +28,10 @@ class _OurBeerState extends State<OurBeer> {
           floatingActionButton: appState.isAdmin
               ? FloatingActionButton(
                   onPressed: (() {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Add Beer')));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BeerEdit(beer: null)));
                   }),
                   child: const Icon(Icons.add))
               : null);
