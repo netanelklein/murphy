@@ -14,8 +14,14 @@ class AppState extends ChangeNotifier {
     init();
   }
 
+  String _uid = '';
+  String get uid => _uid;
+
   bool _loggedIn = false;
   bool get loggedIn => _loggedIn;
+
+  bool _isAdmin = false;
+  bool get isAdmin => _isAdmin;
 
   StreamSubscription<QuerySnapshot>? _beerStream;
   List<Beer> _beerList = [];
@@ -37,10 +43,29 @@ class AppState extends ChangeNotifier {
     FirebaseAuth.instance.userChanges().listen((user) {
       if (user != null) {
         _loggedIn = true;
+        _uid = user.uid;
       } else {
         _loggedIn = false;
+        _uid = '';
       }
       notifyListeners();
+    });
+
+    // Listen for admin changes
+    FirebaseAuth.instance.userChanges().listen((user) {
+      if (user != null) {
+        FirebaseFirestore.instance
+            .collection('users')
+            .doc(user.uid)
+            .get()
+            .then((doc) {
+          _isAdmin = doc.data()!['isAdmin'];
+          notifyListeners();
+        });
+      } else {
+        _isAdmin = false;
+        notifyListeners();
+      }
     });
 
     // Listen for beer changes
